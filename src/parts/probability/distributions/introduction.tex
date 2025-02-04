@@ -1,0 +1,101 @@
+\section{Introduction}
+Probability distributions are fundamental to machine learning, providing a mathematical framework to model uncertainty, variability, and randomness in data. They describe how probabilities are distributed over the possible values of a random variable, playing a critical role in both supervised and unsupervised learning tasks. Understanding probability distributions is essential for building, analyzing, and improving machine learning models. While specific distributions serve distinct purposes, the general principles of probability enable machine learning practitioners to handle uncertainty, infer relationships, and make data-driven decisions effectively. To better understand the importance of probability distributions, here are some applications of it:
+\begin{enumerate}
+    \item \textbf{Modeling Uncertainty}: Machine learning inherently deals with uncertainty in data, and distributions provide a structured way to model this.
+    \item \textbf{Bayesian Inference}: Bayesian methods rely heavily on probability distributions to update beliefs based on evidence.
+    \item \textbf{Likelihood Estimation}: Distributions are used to define likelihood functions in statistical learning models.
+    \item \textbf{Generating Synthetic Data}: Distributions are used to simulate data for testing and validating models.
+    \item \textbf{Loss Functions}: Many loss functions (e.g., cross-entropy) are derived from probabilistic principles.
+\end{enumerate}
+
+\subsection*{Common Uses of Probability Distributions in ML:}
+\begin{enumerate}
+    \item \textbf{Supervised Learning}: Predictive models often assume data is drawn from certain distributions.
+    \item \textbf{Unsupervised Learning}: Clustering methods like Gaussian Mixture Models (GMMs) use distributions to represent cluster shapes.
+    \item \textbf{Generative Models}: Models like Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs) use distributions to generate new data samples.
+\end{enumerate}
+
+\subsection*{Limitations and Challenges:}
+\begin{enumerate}
+    \item \textbf{Assumption of Specific Distributions}: Many ML algorithms assume data follows a specific distribution (e.g., Gaussian), which may not always hold.
+    \item \textbf{Outliers and Non-Normality}: Real-world data often deviates from idealized distribution shapes, requiring extra preprocessing steps.
+    \item \textbf{High-Dimensional Spaces}: Modeling distributions in high-dimensional spaces can be computationally expensive and complex.
+    \item \textbf{Choice of Distribution}: Incorrectly choosing a distribution can lead to inaccurate models and predictions.
+\end{enumerate}
+
+We can classify probability distributions into two types. Those are, Discrete and Continuous probability distributions.
+
+\subsection*{Discrete Probability Distributions}
+Discrete probability distributions describe the probabilities of outcomes for discrete random variables, which are variables that take on countable values (e.g., integers). These distributions are fundamental in statistics, probability theory, and machine learning for modeling events where outcomes are distinct and finite. Discrete probability distributions are essential tools for modeling and analyzing countable outcomes in a variety of domains. They provide critical insights into events like successes, failures, and occurrences over time. Understanding their properties and applications is fundamental for effective problem-solving in statistics, machine learning, and applied sciences.
+
+\subsubsection*{Common Discrete Probability Distributions:}
+\begin{enumerate}
+    \item \textbf{Uniform Distribution}: Models scenarios where each outcome in a finite set of possible values is equally likely to occur, with identical probabilities assigned to each.
+    \item \textbf{Bernoulli Distribution}: Models a single binary outcome (success/failure).
+    \item \textbf{Binomial Distribution}: Models fixed number of successes in $n$ independent Bernoulli trials.
+    \item \textbf{Multinomial Distribution}: Generalization of the binomial distribution to multiple categories.
+    \item \textbf{Poisson Distribution}: Models the number of events occurring in a fixed interval, given a constant mean rate $\lambda$.
+\end{enumerate}
+
+\subsubsection*{Key Properties:}
+\begin{enumerate}
+    \item \textbf{Random Variable}: A discrete random variable maps outcomes of an experiment to distinct numerical values.
+    \item \textbf{Probability Mass Function (PMF)}: Defines the probability of each possible value of a discrete random variable. Mathematically, $P(X = x) = f(x)$, where $f(x)$ is the PMF\@.
+    \item \textbf{Cumulative Distribution Function (CDF)}: Represents the probability that a random variable is less than or equal to a given value. $F(x) = P(X \leq x)$, summing probabilities for all $X \leq x$.
+    \item \textbf{Normalization}: The sum of probabilities across all possible outcomes equals 1:
+    \[
+        \sum_x P(X = x) = 1
+    \]
+    \item \textbf{Support}: The set of all possible values of the random variable.
+\end{enumerate}
+
+\subsubsection*{Usage and Applications in ML:}
+\begin{enumerate}
+    \item \textbf{Classification}:
+    \begin{itemize}
+        \item Bernoulli distributions for binary classification problems.
+        \item Multinomial distributions for text classification in natural language processing (e.g., Naive Bayes Classifier).
+    \end{itemize}
+    \item \textbf{Statistical Inference}:
+    \begin{itemize}
+        \item Poisson processes for modeling rare events like network failures or customer arrivals.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Continuous Probability Distributions}
+Continuous probability distributions describe the probabilities of outcomes for continuous random variables, which can take on an infinite number of values within a range. These distributions are crucial in statistics, probability theory, and machine learning for modeling real-world phenomena like time, distance, temperature, and other measurements. Continuous probability distributions are indispensable for modeling and analyzing real-valued data in various domains. Understanding their properties and applications enables effective decision-making, prediction, and analysis in machine learning, statistics, and applied sciences.
+
+\subsubsection*{Common Continuous Probability Distributions:}
+\begin{enumerate}
+    \item \textbf{Uniform Distribution}: Models equally likely outcomes over a range.
+    \item \textbf{Normal (Gaussian) Distribution}: A symmetrical, bell-shaped distribution; often used due to the Central Limit Theorem. Useful for modeling natural phenomena.
+    \item \textbf{Log-Normal Distribution}: Models variables whose logarithm is normally distributed.
+    \item \textbf{Exponential Distribution}: Models the time between events in a Poisson process.
+    \item \textbf{Beta Distribution}: Used to model probabilities and proportions. Useful in Bayesian analysis.
+    \item \textbf{Gamma Distribution}: Generalizes the exponential distribution, used for modeling waiting times.
+\end{enumerate}
+
+\subsubsection*{Key properties:}
+\begin{enumerate}
+    \item \textbf{Random Variable}: A continuous random variable can take any value within a range (e.g., real numbers between 0 and 1).
+    \item \textbf{Probability Density Function (PDF)}: Represents the relative likelihood of a random variable taking on a particular value. The probability of the variable falling within an interval $[a, b]$ is given by:
+    \[
+        P(a \leq X \leq b) = \int_a^b f(x) \, dx
+    \]
+    Unlike discrete distributions, $f(x)$ does not give the probability at a specific point (since $P(X = x) = 0$ for continuous variables).
+    \item \textbf{Cumulative Distribution Function (CDF)}: Represents the probability that a random variable is less than or equal to a certain value:
+    \[
+        F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt
+    \]
+    \item \textbf{Normalization}: The total probability over the entire range equals 1:
+    \[
+        \int_{-\infty}^\infty f(x) \, dx = 1
+    \]
+    \item \textbf{Support}: The range of values where the PDF is non-zero.
+\end{enumerate}
+
+\subsubsection*{Usage and Applications in ML:}
+\begin{enumerate}
+    \item \textbf{Algorithms}: Gaussian distributions are used in Gaussian Naive Bayes and Gaussian Mixture Models (GMMs).
+    \item \textbf{Statistics}: Kernel Density Estimation (KDE)
+\end{enumerate}

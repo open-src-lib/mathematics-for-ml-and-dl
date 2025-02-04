@@ -1,0 +1,11 @@
+Since this is an Open Source book, we have got some pretty amazing contributors. Before we even start, let's thank the following contributors who have made invaluable contributions for making this book possible. Without their help, this wouldn't be possible at all.
+
+Contributors as of (commit-hash):
+
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        \textbf{Name} & \textbf{Link} & \textbf{Contribution} \\ \hline
+        OSL Maintainer & \url{https://github.com/open-src-lib} & Initial author and maintainer \\ \hline
+    \end{tabularx}
+\end{center}
